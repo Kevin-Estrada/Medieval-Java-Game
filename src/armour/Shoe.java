@@ -1,7 +1,6 @@
 package armour;
 
-import java.io.Serializable;
-public class Shoe extends Armour implements Serializable{
+public class Shoe extends Armour {
 
   /* Class Variables */
 private static final long serialVersionUID = 1L;
