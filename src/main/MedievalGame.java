@@ -95,10 +95,12 @@ public class MedievalGame {
 	private void save() {
 		// Add save functionality here
 		String fileName = "src/playerFiles/" + this.player.getName() + ".svr";
+		ObjectOutputStream playerSaver = null;
 		try {
 			FileOutputStream userSaveFile = new FileOutputStream(fileName);
-			ObjectOutputStream playerSaver = new ObjectOutputStream(userSaveFile);
+			playerSaver = new ObjectOutputStream(userSaveFile);
 			playerSaver.writeObject(this.player);
+			playerSaver.close();
 		} catch (IOException e) {
 			System.out.println("Could not save the player due to the following error: " + e.getMessage());
 		}
@@ -111,6 +113,7 @@ public class MedievalGame {
 			FileInputStream userLoadFile = new FileInputStream("src/playerFiles/" + playerName + ".svr");
 			ObjectInputStream playerLoader = new ObjectInputStream(userLoadFile);
 			loadedPlayer = (Player) playerLoader.readObject();
+			playerLoader.close();
 		} catch (IOException | ClassNotFoundException e) {
 			addDelay(1500);
 			System.out.println(
