@@ -1,13 +1,12 @@
 package armour;
 
-import java.io.Serializable;
-public class Helmet extends Armour implements Serializable{
+public class Helmet extends Armour {
 
-  /* Class Variables */
-  private static final long serialVersionUID = 1L;
+	/* Class Variables */
+	private static final long serialVersionUID = 1L;
 
-  /* Constructors */
-  public Helmet(String name, int durability, int defenseRating) {
-    super(name, durability, defenseRating);
-  }
+	/* Constructors */
+	public Helmet(String name, int durability, int defenseRating) {
+		super(name, durability, defenseRating);
+	}
 }
